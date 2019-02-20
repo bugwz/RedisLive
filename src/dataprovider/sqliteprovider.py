@@ -3,6 +3,7 @@ import contextlib
 import sqlite3
 import json
 
+
 class RedisStatsProvider(object):
     """A Sqlite based persistance to store and fetch stats
     """
@@ -122,7 +123,7 @@ class RedisStatsProvider(object):
             query_time_fmt = '%Y-%m-%d'
         elif group_by == "hour":
             query_time_fmt = '%Y-%m-%d %H'
-        elif group_by=="minute":
+        elif group_by == "minute":
             query_time_fmt = '%Y-%m-%d %H:%M'
         else:
             query_time_fmt = '%Y-%m-%d %H:%M:%S'

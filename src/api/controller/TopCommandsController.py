@@ -21,7 +21,7 @@ class TopCommandsController(BaseController):
             start = end - delta
         else:
             start = dateutil.parser.parse(from_date)
-            end   = dateutil.parser.parse(to_date)
+            end = dateutil.parser.parse(to_date)
 
         for data in self.stats_provider.get_top_commands_stats(server, start,
                                                                end):

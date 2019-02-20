@@ -36,13 +36,13 @@ class CommandsController(BaseController):
         seconds = difference_total_seconds
 
         if hours > 120:
-          group_by = "day"
+            group_by = "day"
         elif minutes > 120:
-          group_by = "hour"
+            group_by = "hour"
         elif seconds > 120:
-          group_by = "minute"
+            group_by = "minute"
         else:
-          group_by = "second"
+            group_by = "second"
 
         combined_data = []
         stats = self.stats_provider.get_command_stats(server, start, end,
@@ -51,6 +51,7 @@ class CommandsController(BaseController):
             combined_data.append([data[1], data[0]])
 
         for data in combined_data:
-            return_data['data'].append([self.datetime_to_list(data[0]), data[1]])
+            return_data['data'].append(
+                [self.datetime_to_list(data[0]), data[1]])
 
         self.write(return_data)
